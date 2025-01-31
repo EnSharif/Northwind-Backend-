@@ -1,6 +1,7 @@
-﻿using Azure.Core;
+﻿
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
+using Core.Utilities.Security.Jwt;
 using Entities.Dtos;
 using System;
 using System.Collections.Generic;

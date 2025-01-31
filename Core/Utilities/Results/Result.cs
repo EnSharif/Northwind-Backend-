@@ -8,9 +8,9 @@ namespace Core.Utilities.Results
 {
     public class Result : IResult
     {
-        public Result(bool success,string messge):this(success)
+        public Result(bool success,string message):this(success)
         {
-            Messge = messge;
+            Message = message;
            // Success = success; böylede yazabiliriz
         }
 
@@ -20,6 +20,6 @@ namespace Core.Utilities.Results
         }
         public bool Success { get; }
 
-        public string Messge { get; }
+        public string Message { get; }
     }
 }

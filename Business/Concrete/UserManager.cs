@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace Business.Concrete
 
         public Users GetByMail(string email)
         {
-            return _userDal.Get(filter:u=>u.Email==email);
+            return _userDal.Get(filter: u => u.Email == email);
         }
 
         public List<OperationClaim> GetClaims(Users users)

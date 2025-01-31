@@ -15,3 +15,4 @@ C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\DataAccess\obj\Deb
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json

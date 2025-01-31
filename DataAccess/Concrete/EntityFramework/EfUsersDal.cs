@@ -2,6 +2,7 @@
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<OperationClaim> GetClaims(Users users)
         {
-            using (var context=new NortwindContext())
+            using (var context = new NortwindContext())
             {
                 var result = from OperationClaim in context.operationClaims
                              join UsersOperationClaims in context.usersOperationClaims
@@ -25,5 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
                 return result.ToList();
             }
         }
+
+
     }
 }

@@ -9,6 +9,6 @@ namespace Core.Utilities.Results
     public interface IResult
     {
         bool Success { get; }
-        string Messge { get; }
+        string Message { get; }
     }
 }
