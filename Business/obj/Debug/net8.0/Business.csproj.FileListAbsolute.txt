@@ -18,3 +18,4 @@ C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Business\obj\Debug
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Business\obj\Debug\net8.0\refint\Business.dll
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Business\obj\Debug\net8.0\Business.pdb
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Business\obj\Debug\net8.0\ref\Business.dll
+C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Business\obj\Debug\net8.0\Business.sourcelink.json

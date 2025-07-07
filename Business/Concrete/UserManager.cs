@@ -4,7 +4,16 @@ using System.Text;
 using Business.Abstract;
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
+<<<<<<< HEAD
 using Entities.Concrete;
+=======
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> d62e57d (API Authorize)
 
 namespace Business.Concrete
 {
@@ -24,7 +33,11 @@ namespace Business.Concrete
 
         public void Add(User user)
         {
+<<<<<<< HEAD
             _userDal.Add(user);
+=======
+            return _userDal.Get(filter: u => u.Email == email);
+>>>>>>> d62e57d (API Authorize)
         }
 
         public User GetByEmail(string email)

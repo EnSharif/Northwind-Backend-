@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 ﻿using System;
 using Business.Abstract;
 using Entities.Dtos;
+=======
+﻿using Business.Abstract;
+using Entities.Dtos;
+using Microsoft.AspNetCore.Http;
+>>>>>>> d62e57d (API Authorize)
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -9,7 +15,11 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+<<<<<<< HEAD
         private readonly IAuthService _authService;
+=======
+        private IAuthService _authService;
+>>>>>>> d62e57d (API Authorize)
 
         public AuthController(IAuthService authService)
         {
@@ -20,6 +30,7 @@ namespace WebAPI.Controllers
         public IActionResult Login(UserForLoginDto userForLoginDto)
         {
             var userToLogin = _authService.Login(userForLoginDto);
+<<<<<<< HEAD
 
             if (!userToLogin.Success)
                 return BadRequest(userToLogin.Message);
@@ -53,4 +64,38 @@ namespace WebAPI.Controllers
             return BadRequest(accessTokenResult.Message);
         }
     }
+=======
+            if (!userToLogin.Success)
+            {
+                return BadRequest(userToLogin.Message);
+            }
+            var result = _authService.CreateAccessToken(userToLogin.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("register")]
+        public ActionResult Register(UserForRegisterDto userForRegisterDto)
+        {
+            var userExists = _authService.UserExists(userForRegisterDto.Email);
+            if (!userExists.Success)
+            {
+                return BadRequest(userExists.Message);
+            }
+            var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
+            var result = _authService.CreateAccessToken(registerResult.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+        
+        }
+
+    }
+
+>>>>>>> d62e57d (API Authorize)
 }

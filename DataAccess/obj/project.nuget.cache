@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "gVmQ727B2Zg=",
+=======
+  "dgSpecHash": "d28PWzNl9xQ=",
+>>>>>>> d62e57d (API Authorize)
   "success": true,
   "projectFilePath": "C:\\Users\\enjis\\Desktop\\Godoro\\BackendProject\\NorthwindBackend\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [

@@ -97,6 +97,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Cake.Core/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -219,6 +220,12 @@
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.0.3"
+>>>>>>> d62e57d (API Authorize)
         },
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
@@ -659,10 +666,17 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.JsonWebTokens/7.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "7.1.2"
+=======
+      "Microsoft.IdentityModel.JsonWebTokens/7.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "7.0.3"
+>>>>>>> d62e57d (API Authorize)
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
@@ -691,11 +705,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Protocols/7.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "7.1.2",
           "Microsoft.IdentityModel.Tokens": "7.1.2"
+=======
+      "Microsoft.IdentityModel.Protocols/7.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "7.0.3",
+          "Microsoft.IdentityModel.Tokens": "7.0.3"
+>>>>>>> d62e57d (API Authorize)
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.Protocols.dll": {
@@ -708,11 +730,19 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/7.1.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Protocols": "7.1.2",
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
+=======
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/7.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "7.0.3",
+          "System.IdentityModel.Tokens.Jwt": "7.0.3"
+>>>>>>> d62e57d (API Authorize)
         },
         "compile": {
           "lib/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
@@ -743,6 +773,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.NETCore.Platforms/7.0.4": {
         "type": "package",
         "compile": {
@@ -762,6 +793,9 @@
         }
       },
       "Microsoft.OpenApi/1.6.23": {
+=======
+      "Microsoft.OpenApi/1.6.22": {
+>>>>>>> d62e57d (API Authorize)
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -1401,6 +1435,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "System.Globalization/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1410,6 +1445,21 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Globalization.dll": {
+=======
+      "System.IdentityModel.Tokens.Jwt/7.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "7.0.3",
+          "Microsoft.IdentityModel.Tokens": "7.0.3"
+        },
+        "compile": {
+          "lib/net8.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IdentityModel.Tokens.Jwt.dll": {
+>>>>>>> d62e57d (API Authorize)
             "related": ".xml"
           }
         }
@@ -1768,6 +1818,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "System.ObjectModel/4.0.12": {
         "type": "package",
         "dependencies": {
@@ -1921,6 +1972,8 @@
           }
         }
       },
+=======
+>>>>>>> d62e57d (API Authorize)
       "System.Runtime.Caching/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -2365,6 +2418,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.Text.Encoding/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -2378,6 +2432,8 @@
           }
         }
       },
+=======
+>>>>>>> d62e57d (API Authorize)
       "System.Text.Encoding.CodePages/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -2792,6 +2848,7 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+<<<<<<< HEAD
     "Cake.Core/5.0.0": {
       "sha512": "hq0HlI6bdRoMjUQTKioVjJZxQRxT7SuIjLjfTXO7fWe/alEU4OJumxq6LhTqz06pTRC7e5OrQqXyGKJnq5I+rw==",
       "type": "package",
@@ -2913,6 +2970,12 @@
       "sha512": "VqKkXLxsCVHNmSdUIuBtDSXL3OqX0yfDjcZxCcYD8VFNpTutl53BCFHzMb3wvw3asneHnURzC2R8VvIXn3l5Lw==",
       "type": "package",
       "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.5",
+=======
+    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+      "sha512": "rwxaZYHips5M9vqxRkGfJthTx+Ws4O4yCuefn17J371jL3ouC5Ker43h2hXb5yd9BMnImE9rznT75KJHm6bMgg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.0",
+>>>>>>> d62e57d (API Authorize)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2920,7 +2983,11 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
         "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+<<<<<<< HEAD
         "microsoft.aspnetcore.authentication.jwtbearer.8.0.5.nupkg.sha512",
+=======
+        "microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
+>>>>>>> d62e57d (API Authorize)
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
@@ -3669,10 +3736,17 @@
         "microsoft.identitymodel.abstractions.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.IdentityModel.JsonWebTokens/7.1.2": {
       "sha512": "cloLGeZolXbCJhJBc5OC05uhrdhdPL6MWHuVUnkkUvPDeK7HkwThBaLZ1XjBQVk9YhxXE2OvHXnKi0PLleXxDg==",
       "type": "package",
       "path": "microsoft.identitymodel.jsonwebtokens/7.1.2",
+=======
+    "Microsoft.IdentityModel.JsonWebTokens/7.0.3": {
+      "sha512": "vxjHVZbMKD3rVdbvKhzAW+7UiFrYToUVm3AGmYfKSOAwyhdLl/ELX1KZr+FaLyyS5VReIzWRWJfbOuHM9i6ywg==",
+      "type": "package",
+      "path": "microsoft.identitymodel.jsonwebtokens/7.0.3",
+>>>>>>> d62e57d (API Authorize)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3688,7 +3762,11 @@
         "lib/net8.0/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+=======
+        "microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
+>>>>>>> d62e57d (API Authorize)
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
@@ -3716,10 +3794,17 @@
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.IdentityModel.Protocols/7.1.2": {
       "sha512": "SydLwMRFx6EHPWJ+N6+MVaoArN1Htt92b935O3RUWPY1yUF63zEjvd3lBu79eWdZUwedP8TN2I5V9T3nackvIQ==",
       "type": "package",
       "path": "microsoft.identitymodel.protocols/7.1.2",
+=======
+    "Microsoft.IdentityModel.Protocols/7.0.3": {
+      "sha512": "BtwR+tctBYhPNygyZmt1Rnw74GFrJteW+1zcdIgyvBCjkek6cNwPPqRfdhzCv61i+lwyNomRi8+iI4QKd4YCKA==",
+      "type": "package",
+      "path": "microsoft.identitymodel.protocols/7.0.3",
+>>>>>>> d62e57d (API Authorize)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3735,6 +3820,7 @@
         "lib/net8.0/Microsoft.IdentityModel.Protocols.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
         "microsoft.identitymodel.protocols.nuspec"
       ]
@@ -3743,6 +3829,16 @@
       "sha512": "6lHQoLXhnMQ42mGrfDkzbIOR3rzKM1W1tgTeMPLgLCqwwGw0d96xFi/UiX/fYsu7d6cD5MJiL3+4HuI8VU+sVQ==",
       "type": "package",
       "path": "microsoft.identitymodel.protocols.openidconnect/7.1.2",
+=======
+        "microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
+        "microsoft.identitymodel.protocols.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/7.0.3": {
+      "sha512": "W97TraHApDNArLwpPcXfD+FZH7njJsfEwZE9y9BoofeXMS8H0LBBobz0VOmYmMK4mLdOKxzN7SFT3Ekg0FWI3Q==",
+      "type": "package",
+      "path": "microsoft.identitymodel.protocols.openidconnect/7.0.3",
+>>>>>>> d62e57d (API Authorize)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3758,7 +3854,11 @@
         "lib/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+<<<<<<< HEAD
         "microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+=======
+        "microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",
+>>>>>>> d62e57d (API Authorize)
         "microsoft.identitymodel.protocols.openidconnect.nuspec"
       ]
     },
@@ -3786,6 +3886,7 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.NETCore.Platforms/7.0.4": {
       "sha512": "yLEHlNN7O5WiND89r42sepgVwy5W/ZoTiFEdJDV7MHR1lW02LL7Nipz2TD5qM/Kx9W3/k3NP+PAP2qUdOm+leg==",
       "type": "package",
@@ -3820,6 +3921,10 @@
     },
     "Microsoft.OpenApi/1.6.23": {
       "sha512": "tZ1I0KXnn98CWuV8cpI247A17jaY+ILS9vvF7yhI0uPPEqF4P1d7BWL5Uwtel10w9NucllHB3nTkfYTAcHAh8g==",
+=======
+    "Microsoft.OpenApi/1.6.22": {
+      "sha512": "aBvunmrdu/x+4CaA/UP1Jx4xWGwk4kymhoIRnn2Vp+zi5/KOPQJ9EkSXHRUr01WcGKtYl3Au7XfkPJbU1G2sjQ==",
+>>>>>>> d62e57d (API Authorize)
       "type": "package",
       "path": "microsoft.openapi/1.6.23",
       "files": [
@@ -4878,6 +4983,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
+<<<<<<< HEAD
     "System.Globalization/4.0.11": {
       "sha512": "B95h0YLEL2oSnwF/XjqSWKnwKOy/01VWkNlsCeMTFJLLabflpGV26nK164eRs5GiaRSBGpOxQ3pKoSnnyZN5pg==",
       "type": "package",
@@ -5029,6 +5135,12 @@
       "sha512": "Thhbe1peAmtSBFaV/ohtykXiZSOkx59Da44hvtWfIMFofDA3M3LaVyjstACf2rKGn4dEDR2cUpRAZ0Xs/zB+7Q==",
       "type": "package",
       "path": "system.identitymodel.tokens.jwt/7.1.2",
+=======
+    "System.IdentityModel.Tokens.Jwt/7.0.3": {
+      "sha512": "caEe+OpQNYNiyZb+DJpUVROXoVySWBahko2ooNfUcllxa9ZQUM8CgM/mDjP6AoFn6cQU9xMmG+jivXWub8cbGg==",
+      "type": "package",
+      "path": "system.identitymodel.tokens.jwt/7.0.3",
+>>>>>>> d62e57d (API Authorize)
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5044,7 +5156,11 @@
         "lib/net8.0/System.IdentityModel.Tokens.Jwt.xml",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
         "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
+<<<<<<< HEAD
         "system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
+=======
+        "system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512",
+>>>>>>> d62e57d (API Authorize)
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
@@ -5815,6 +5931,7 @@
         "version.txt"
       ]
     },
+<<<<<<< HEAD
     "System.ObjectModel/4.0.12": {
       "sha512": "tAgJM1xt3ytyMoW4qn4wIqgJYm7L7TShRZG4+Q4Qsi2PCcj96pXN7nRywS9KkB3p/xDUjc2HSwP9SROyPYDYKQ==",
       "type": "package",
@@ -6381,6 +6498,8 @@
         "system.runtime.nuspec"
       ]
     },
+=======
+>>>>>>> d62e57d (API Authorize)
     "System.Runtime.Caching/6.0.0": {
       "sha512": "E0e03kUp5X2k+UAoVl6efmI7uU7JRBWi5EIdlQ7cr0NpBGjHG4fWII35PgsBY9T4fJQ8E4QPsL0rKksU9gcL5A==",
       "type": "package",
@@ -7232,6 +7351,7 @@
         "version.txt"
       ]
     },
+<<<<<<< HEAD
     "System.Text.Encoding/4.0.11": {
       "sha512": "U3gGeMlDZXxCEiY4DwVLSacg+DFWCvoiX+JThA/rvw37Sqrku7sEFeVBBBMBnfB6FeZHsyDx85HlKL19x0HtZA==",
       "type": "package",
@@ -7300,6 +7420,8 @@
         "system.text.encoding.nuspec"
       ]
     },
+=======
+>>>>>>> d62e57d (API Authorize)
     "System.Text.Encoding.CodePages/6.0.0": {
       "sha512": "ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
       "type": "package",
@@ -8013,11 +8135,17 @@
       "Autofac >= 8.3.0",
       "Autofac.Extensions.DependencyInjection >= 10.0.0",
       "Business >= 1.0.0",
+<<<<<<< HEAD
       "Cake.Core >= 5.0.0",
       "Castle.Core >= 5.2.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.5",
       "Microsoft.EntityFrameworkCore >= 9.0.6",
       "Swashbuckle.AspNetCore >= 9.0.1"
+=======
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
+      "Microsoft.EntityFrameworkCore >= 9.0.0",
+      "Swashbuckle.AspNetCore >= 7.2.0"
+>>>>>>> d62e57d (API Authorize)
     ]
   },
   "packageFolders": {
@@ -8083,6 +8211,7 @@
             "target": "Package",
             "version": "[10.0.0, )"
           },
+<<<<<<< HEAD
           "Cake.Core": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -8094,6 +8223,11 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.0.5, )"
+=======
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+>>>>>>> d62e57d (API Authorize)
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -8123,7 +8257,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+>>>>>>> d62e57d (API Authorize)
       }
     }
   }

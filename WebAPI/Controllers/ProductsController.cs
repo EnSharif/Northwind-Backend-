@@ -11,17 +11,23 @@ namespace WebAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private IProductService _productService;
+       
 
         public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
+<<<<<<< HEAD
         [HttpGet(template:"getall")]
         [Authorize()]
+=======
+        [HttpGet("/getall")]
+        [Authorize(Roles = "Admin")]
+>>>>>>> d62e57d (API Authorize)
         public IActionResult GetList()
         {
-            var result =_productService.GetList();
+            var result = _productService.GetList();
             if (result.Success)
             {
                 return Ok(result.Data);
@@ -30,7 +36,9 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet(template: "getbycategory")]
+
+        [HttpGet("/getbycategory")]
+        
         public IActionResult GetListByCategory(int categoryId)
         {
             var result = _productService.GetListByCategory(categoryId);
@@ -42,7 +50,8 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet(template: "getbyid")]
+        [HttpGet("/getbyid")]
+        [Authorize(Roles = "Admin")]
         public IActionResult GetById(int productId)
         {
             var result = _productService.GetById(productId);

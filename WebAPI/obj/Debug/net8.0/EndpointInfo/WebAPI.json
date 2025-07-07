@@ -79,7 +79,7 @@
         }
       }
     },
-    "/api/Products/getall": {
+    "/getall": {
       "get": {
         "tags": [
           "Products"
@@ -91,7 +91,7 @@
         }
       }
     },
-    "/api/Products/getbycategory": {
+    "/getbycategory": {
       "get": {
         "tags": [
           "Products"
@@ -113,7 +113,7 @@
         }
       }
     },
-    "/api/Products/getbyid": {
+    "/getbyid": {
       "get": {
         "tags": [
           "Products"
@@ -278,6 +278,7 @@
       "UserForRegisterDto": {
         "type": "object",
         "properties": {
+<<<<<<< HEAD
           "firstName": {
             "type": "string",
             "nullable": true
@@ -291,6 +292,21 @@
             "nullable": true
           },
           "password": {
+=======
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+>>>>>>> d62e57d (API Authorize)
             "type": "string",
             "nullable": true
           }

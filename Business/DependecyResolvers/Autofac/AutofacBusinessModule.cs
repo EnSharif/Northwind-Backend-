@@ -1,4 +1,13 @@
 ﻿using Autofac;
+<<<<<<< HEAD
+=======
+using Business.Abstract;
+using Business.Concrete;
+using Core.Utilities.Security.Jwt;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+>>>>>>> d62e57d (API Authorize)
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,6 +52,9 @@ namespace Business.DependecyResolvers.Autofac
 
 
 
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
         }
 

@@ -14,3 +14,4 @@ C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Entities\obj\Debug
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Entities\obj\Debug\net8.0\refint\Entities.dll
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Entities\obj\Debug\net8.0\Entities.pdb
 C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Entities\obj\Debug\net8.0\ref\Entities.dll
+C:\Users\enjis\Desktop\Godoro\BackendProject\NorthwindBackend\Entities\obj\Debug\net8.0\Entities.sourcelink.json

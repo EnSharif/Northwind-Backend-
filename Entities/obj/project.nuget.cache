@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "EaGJmy6b2/I=",
+=======
+  "dgSpecHash": "4SFccvNeL+M=",
+>>>>>>> d62e57d (API Authorize)
   "success": true,
   "projectFilePath": "C:\\Users\\enjis\\Desktop\\Godoro\\BackendProject\\NorthwindBackend\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
