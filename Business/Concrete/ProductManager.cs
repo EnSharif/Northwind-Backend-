@@ -4,14 +4,17 @@ using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Core.Utilities.Results;
 using Business.Constants;
+using Core.Utilities.Results;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+
 
 namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        public IProductDal _productDal;
+        private IProductDal _productDal;
 
         public ProductManager(IProductDal productDal)
         {
@@ -20,36 +23,46 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int productId)
         {
-            return new SucessDataResult<Product>(_productDal.Get(p => p.ProductId == productId)) ;
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
-        public IDataResult<List<Product>> GetList()
+        public IDataResult <List<Product>> GetList()
         {
-            return new SucessDataResult<List<Product>>( _productDal.GetList().ToList());
+            return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
-        public IDataResult<List<Product>> GetListByCategory(int categoryId)
+        public IDataResult<List<Product>>  GetListByCategory(int categoryId)
         {
-            return new SucessDataResult<List<Product>> (_productDal.GetList(filter: p => p.CategoryId == categoryId).ToList());
+            return new SuccessDataResult<List<Product>>(_productDal.GetList(filter:p=>p.CategoryId==p.CategoryId).ToList());
         }
-        // Magig string
-        // Business codes
+
+        //Cross Cutting Concerns - Validation, Cache, Logging, Transaction, Performance, Authorization
+        //AOP - Aspect Oriented Programming
+
+        
+        [ValidationAspect(typeof(ProductValidator), priority =1)]
+        
         public IResult Add(Product product)
         {
+
+            //Business codes
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
+
         }
 
         public IResult Delete(Product product)
         {
             _productDal.Delete(product);
             return new SuccessResult(Messages.ProductDeleted);
+
         }
 
         public IResult Update(Product product)
         {
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
+
         }
     }
 }

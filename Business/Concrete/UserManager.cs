@@ -1,36 +1,35 @@
-﻿using Business.Abstract;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Business.Abstract;
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class UserManager : IUsersService
+    public class UserManager : IUserService
     {
-        IUserDal _userDal;
+        private IUserDal _userDal;
 
         public UserManager(IUserDal userDal)
         {
             _userDal = userDal;
         }
 
-        public void Add(Users users)
+        public List<OperationClaim> GetClaims(User user)
         {
-            _userDal.Add(users);
+            return _userDal.GetClaims(user);
         }
 
-        public Users GetByMail(string email)
+        public void Add(User user)
         {
-            return _userDal.Get(filter:u=>u.Email==email);
+            _userDal.Add(user);
         }
 
-        public List<OperationClaim> GetClaims(Users users)
+        public User GetByEmail(string email)
         {
-            return _userDal.GetClaims(users);
+            return _userDal.Get(filter: u => u.Email == email);
         }
     }
 }

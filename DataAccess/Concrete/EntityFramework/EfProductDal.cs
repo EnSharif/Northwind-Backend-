@@ -1,5 +1,4 @@
-﻿using Core.DataAccess.EntityFramework;
-using Entities.Concrete;
+﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +13,7 @@ using DataAccess.Abstract;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfProductDal : EfEntityRepositoryBase<Product,NortwindContext>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product,NorthwindContext>, IProductDal
     {
         
     }

@@ -1,58 +1,83 @@
-﻿using Azure.Core;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Business.Abstract;
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
+using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
 using Entities.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Business.Concrete
 {
     public class AuthManager : IAuthService
     {
-        private IUsersService _UsersService;
-        private ITokenHelper _TokenHelper;
+        private IUserService _userService;
+        private ITokenHelper _tokenHelper;
 
-        public AuthManager(IUsersService usersService)
+        public AuthManager(IUserService userService, ITokenHelper tokenHelper)
         {
-            _UsersService = usersService;
+            _userService = userService;
+            _tokenHelper = tokenHelper;
         }
 
-        public AuthManager(ITokenHelper tokenHelper)
+        public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
-            _TokenHelper = tokenHelper;
-        }
+            var userToCheck = _userService.GetByEmail(userForLoginDto.Email);
 
-
-        public IDataResult<AccessToken> CreateAccessToken(Users users)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<Users> Login(UserForLoginDto userForLoginDto)
-        {
-            var userToCheck=_UsersService.GetByMail(userForLoginDto.Email);
             if (userToCheck == null)
-            { 
-                return new ErrorDataResult<Users>(Messages.UserNotFound);    
+            {
+                return new ErrorDataResult<User>(userToCheck, Messages.UserNotFound); ;
             }
 
-        }
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                return new ErrorDataResult<User>(userToCheck, Messages.PasswordError); ;
+            }
 
-        public IDataResult<Users> Register(UserForRegisterDto userForRegisterDto, string password)
-        {
-            throw new NotImplementedException();
+            return new SuccessDataResult<User>(userToCheck, Messages.SuccessfulLogin); ;
         }
 
         public IResult UserExists(string email)
         {
-            throw new NotImplementedException();
+            if (_userService.GetByEmail(email) != null)
+            {
+                return new ErrorResult(Messages.UserAlreadyExists);
+            }
+
+            return new SuccessResult();
+        }
+
+        public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
+        {
+            byte[] passwordHash, passwordSalt;
+
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+
+            var user = new User
+            {
+
+                Email = userForRegisterDto.Email,
+                FirstName = userForRegisterDto.FirstName,
+                LastName = userForRegisterDto.LastName,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Status = true
+            };
+
+            _userService.Add(user);
+
+            return new SuccessDataResult<User>(user, Messages.UserRegistered);
+        }
+
+        // No changes needed in the method itself
+        public IDataResult<AccessToken> CreateAccessToken(User user)
+        {
+            var claims = _userService.GetClaims(user);
+            var accessToken = _tokenHelper.CreateToken(user, claims);
+
+            return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
     }
 }

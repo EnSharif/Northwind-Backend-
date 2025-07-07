@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet(template:"getall")]
+        [Authorize()]
         public IActionResult GetList()
         {
             var result =_productService.GetList();
@@ -24,7 +26,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
 
@@ -36,7 +38,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
 
@@ -48,7 +50,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
         //[HttpGet(template: "add")]
@@ -59,9 +61,9 @@ namespace WebAPI.Controllers
             var result = _productService.Add(product);
             if (result.Success)
             {
-                return Ok(result.Messge);
+                return Ok(result.Message);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
         [HttpPut]
@@ -71,9 +73,9 @@ namespace WebAPI.Controllers
             var result = _productService.Update(product);
             if (result.Success)
             {
-                return Ok(result.Messge);
+                return Ok(result.Message);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
 
@@ -84,9 +86,9 @@ namespace WebAPI.Controllers
             var result = _productService.Delete(product);
             if (result.Success)
             {
-                return Ok(result.Messge);
+                return Ok(result.Message);
             }
-            return BadRequest(result.Messge);
+            return BadRequest(result.Message);
         }
 
     }

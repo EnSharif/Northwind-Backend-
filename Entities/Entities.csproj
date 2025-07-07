@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
@@ -87,10 +83,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="8.2.0" />
+    <PackageReference Include="Autofac" Version="8.3.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Castle.Core" Version="5.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstract\" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ namespace Core.Utilities.Security.Encryption
 {
     public class SecurityKeyHelper
     {
-        public static SecurityKey CreateScurtyKey(string securtyKey)
+        public static SecurityKey CreateSecurityKey(string securtyKey)
         {
            return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securtyKey));
         }
