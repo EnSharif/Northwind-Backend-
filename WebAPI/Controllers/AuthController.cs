@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using System;
+using Business.Abstract;
 using Entities.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private IAuthService _authService;
+        private readonly IAuthService _authService;
 
         public AuthController(IAuthService authService)
         {
@@ -21,35 +22,31 @@ namespace WebAPI.Controllers
         {
             var userToLogin = _authService.Login(userForLoginDto);
             if (!userToLogin.Success)
-            {
                 return BadRequest(userToLogin.Message);
-            }
+
             var result = _authService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
-            {
                 return Ok(result.Data);
-            }
+
             return BadRequest(result.Message);
         }
 
         [HttpPost("register")]
-        public ActionResult Register(UserForRegisterDto userForRegisterDto)
+        public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
             var userExists = _authService.UserExists(userForRegisterDto.Email);
             if (!userExists.Success)
-            {
                 return BadRequest(userExists.Message);
-            }
+
             var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
+            if (!registerResult.Success || registerResult.Data == null)
+                return BadRequest(registerResult.Message ?? "Kullanıcı oluşturulamadı.");
+
             var result = _authService.CreateAccessToken(registerResult.Data);
             if (result.Success)
-            {
                 return Ok(result.Data);
-            }
+
             return BadRequest(result.Message);
-        
         }
-
     }
-
 }

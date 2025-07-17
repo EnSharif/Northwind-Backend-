@@ -11,15 +11,18 @@ namespace WebAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private IProductService _productService;
-       
+
 
         public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
+
+
         [HttpGet("/getall")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
+
         public IActionResult GetList()
         {
             var result = _productService.GetList();
@@ -32,8 +35,8 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpGet("/getbycategory")]
-        
+        [HttpGet("/getlistbycategory")]
+
         public IActionResult GetListByCategory(int categoryId)
         {
             var result = _productService.GetListByCategory(categoryId);
@@ -46,7 +49,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("/getbyid")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult GetById(int productId)
         {
             var result = _productService.GetById(productId);
@@ -60,7 +63,7 @@ namespace WebAPI.Controllers
         //[HttpGet(template: "add")]
         [HttpPost]
         [Route("/post")]
-        public IActionResult Add(Product product) 
+        public IActionResult Add(Product product)
         {
             var result = _productService.Add(product);
             if (result.Success)
@@ -88,6 +91,18 @@ namespace WebAPI.Controllers
         public IActionResult Delete(Product product)
         {
             var result = _productService.Delete(product);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("transaction")]
+        
+        public IActionResult TransactionTest(Product product)
+        {
+            var result = _productService.TransactionOperation(product);
             if (result.Success)
             {
                 return Ok(result.Message);

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class UserManager : IUsersService
+    public class UserManager : IUserService
     {
         IUserDal _userDal;
 
@@ -19,19 +19,19 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        public void Add(Users users)
+        public void Add(User user)
         {
-            _userDal.Add(users);
+            _userDal.Add(user);
         }
 
-        public Users GetByMail(string email)
+        public User GetByMail(string email)
         {
             return _userDal.Get(filter: u => u.Email == email);
         }
 
-        public List<OperationClaim> GetClaims(Users users)
+        public List<OperationClaim> GetClaims(User user)
         {
-            return _userDal.GetClaims(users);
+            return _userDal.GetClaims(user);
         }
     }
 }

@@ -15,14 +15,14 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: "Data Source=ENSHARIF;Initial Catalog=Northwind;Persist Security Info=True;User ID=EnjiSharif;Password=123456;Encrypt=True;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer(connectionString: "Data Source=ENSHARIF;Initial Catalog=Northwind;Persist Security Info=True;User ID=EnjiSharif;Password=123456789;Encrypt=True;Trust Server Certificate=True");
         }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Users> Users { get; set; }
-        public DbSet<UsersOperationClaims> usersOperationClaims { get; set; }
-        public DbSet<OperationClaim> operationClaims { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<UserOperationClaim> userOperationClaim { get; set; }
+        public DbSet<OperationClaim> operationClaim { get; set; }
 
 
     }

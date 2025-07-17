@@ -1,7 +1,9 @@
 
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Business.DependecyResolvers;
 using Business.DependecyResolvers.Autofac;
+
 
 namespace WebAPI
 {

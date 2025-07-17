@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Category>> GetList()
         {
-            return new SucessDataResult<List<Category>>(_categoryDal.GetList().ToList());
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetList().ToList());
         }
 
       

@@ -30,7 +30,7 @@ namespace Core.Utilities.Security.Jwt
         }
 
 
-        public AccessToken CreateToken(Users users, List<OperationClaim> operationClaims)
+        public AccessToken CreateToken(User users, List<OperationClaim> operationClaims)
         {
             var securtyKey = SecurityKeyHelper.CreateSecurtyKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securtyKey);
@@ -46,7 +46,7 @@ namespace Core.Utilities.Security.Jwt
 
         }
 
-        public JwtSecurityToken CreateJwtSecurtyToken(TokenOptions tokenOptions, Users users,
+        public JwtSecurityToken CreateJwtSecurtyToken(TokenOptions tokenOptions, User users,
                                   SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
             var jwt = new JwtSecurityToken(
@@ -62,7 +62,7 @@ namespace Core.Utilities.Security.Jwt
 
 
         }
-        private IEnumerable<Claim> SetClaims(Users users, List<OperationClaim> operationClaims)
+        private IEnumerable<Claim> SetClaims(User users, List<OperationClaim> operationClaims)
         {
             var claims = new List<Claim>();
             claims.AddNameIdentifier(users.Id.ToString());
