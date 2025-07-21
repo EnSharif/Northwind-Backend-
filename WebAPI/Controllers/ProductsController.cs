@@ -21,10 +21,11 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("/getall")]
-        //[Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Product.List")]
 
         public IActionResult GetList()
         {
+           
             var result = _productService.GetList();
             if (result.Success)
             {
@@ -49,7 +50,7 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("/getbyid")]
-        //[Authorize(Roles = "Admin")]
+       
         public IActionResult GetById(int productId)
         {
             var result = _productService.GetById(productId);

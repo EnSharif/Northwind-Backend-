@@ -10,6 +10,7 @@ using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Caching;
+using Business.BusinessAspects.Autofac;
 
 
 namespace Business.Concrete
@@ -17,6 +18,7 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        
 
         public ProductManager(IProductDal productDal)
         {
@@ -33,7 +35,8 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
-        [CacheAspect(duration:1)] // Cache for 60 seconds
+        [SecuredOperation("Product.List,Admin")] // Authorization check
+        [CacheAspect(duration:10)] // Cache for 60 seconds
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetList(filter: p => p.CategoryId == p.CategoryId).ToList());

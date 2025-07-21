@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUsersDal : EfEntityRepositoryBase<Users, NortwindContext>, IUserDal
+    public class EfUsersDal : EfEntityRepositoryBase<User, NortwindContext>, IUserDal
     {
-        public List<OperationClaim> GetClaims(Users users)
+        public List<OperationClaim> GetClaims(User user)
         {
             using (var context = new NortwindContext())
             {
-                var result = from OperationClaim in context.operationClaims
-                             join UsersOperationClaims in context.usersOperationClaims
-                             on OperationClaim.Id equals UsersOperationClaims.Id
-                             where UsersOperationClaims.UserId == users.Id
-                             select new OperationClaim { Id = UsersOperationClaims.Id, Name = OperationClaim.Name };
+                var result = from OperationClaim in context.operationClaim
+                             join UserOperationClaim in context.userOperationClaim
+                             on OperationClaim.Id equals UserOperationClaim.Id
+                             where UserOperationClaim.UserId == user.Id
+                             select new OperationClaim { Id = UserOperationClaim.Id, Name = OperationClaim.Name };
                 return result.ToList();
             }
         }
