@@ -11,6 +11,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Caching;
 using Business.BusinessAspects.Autofac;
+using Core.Aspects.Autofac.Performance;
 
 
 namespace Business.Concrete
@@ -30,8 +31,11 @@ namespace Business.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
+
+        [PerformanceAspect(interval:5)]
         public IDataResult<List<Product>> GetList()
         {
+            Thread.Sleep(5000); // Simulating a long-running operation
             return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
